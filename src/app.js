@@ -1,4 +1,4 @@
-//jshint esversion:6
+
 require('dotenv').config()
 const path=require("path");
 const hbs=require("hbs");
@@ -16,35 +16,28 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-/////////
-//const static_path=path.join(__dirname,"../public");//connecting  public folder
-//const views_path=path.join(__dirname,"../template/views"); // to use temletes folder
-// const partials_path=path.join(__dirname,"../template/partials");
-//
- //app.use(express.json());
  app.use(express.urlencoded({extended:false}));
- //app.use(express.static(static_path));  // to use static files
- //app.set("views",views_path); // to use views's files
- ///hbs.registerPartials(partials_path); //to use partials files
-//app.set("view engine", "hbs"); // to use handlebar
-
-////////////
 
 app.use(express.static("public/"));
 
+mongoose.connect
 
-const URI = process.env.MONGODB_URL;
+const URI = process.env.MONGODB_URL ;
 
-mongoose.connect(URI, {
+   app.listen(process.env.PORT || 5000)
 
-useNewUrlParser: true, 
-
-useUnifiedTopology: true 
-
-}, err => {
-if(err) throw err;
-console.log('Connected to MongoDB!!!')
-});
+   
+     mongoose.connect(URI, {
+     
+     useNewUrlParser: true, 
+     
+     useUnifiedTopology: true 
+     
+     }, err => {
+     if(err) throw err;
+     console.log('Connected to MongoDB!!!')
+     });
+   
 
 const postSchema = {
    heading: {
@@ -186,11 +179,4 @@ app.get('/welcome',(req,res)=>{
   res.render("welcome");
 })
 
-let port = process.env.PORT;
-if(port===null || port==""){
-  port=3000;
-}
 
-app.listen(3000, function() {
-  console.log("Server started");
-});
