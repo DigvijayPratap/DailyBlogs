@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/home.css">
+    <title> Blogs Page</title>
+</head>
+<body>
+  <%- include("partials/header") -%>
+  <div>
+   <div class="hhome">
+  <h1>Home</h1>
+  <p><%= text %></p>
+      <div class="hallpost">
+          <% posts.forEach(function(post){ %>
+          
+            <div class="hpost">
+           <div class="hheading">
+             <h1><%= post.heading %></h1>
+          </div>
+            
+            <div class="hcontent">
+            <p><%= post.content.substring(0,120) + " ..." %> 
+              <a class="read-more" href="/posts/<%= post._id %>">Read More</a></p>
+          <% }) %>
+           </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <%- include("partials/footer") -%>
+
+</body>
+</html>

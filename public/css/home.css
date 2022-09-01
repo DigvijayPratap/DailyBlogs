@@ -1,0 +1,30 @@
+p{
+    padding-left: 10px;
+}
+.hcontent{
+    
+    width: 100%;
+   background-color: rgb(198, 220, 240);
+   padding-bottom: 60px;
+   padding-top: 40px;
+   font-weight: bold;
+}
+.hheading{
+    box-shadow: 6px 6px 6px black ;
+    padding-left: 30px;
+    line-height: 50px;
+    margin-top: 20px;
+    width: 100%;
+   background-color: rgb(126, 153, 153);
+}
+.hallpost{
+    border-bottom-left-radius: 10px;
+    width: 100%;
+   
+}
+.hhome{
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+   
+}
