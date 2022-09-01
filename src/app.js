@@ -22,11 +22,9 @@ app.use(express.static("public/"));
 
 mongoose.connect
 
-const URI = process.env.MONGODB_URL ;
+const URI = process.env.MONGODB_URL || 5000;
 
    app.listen(process.env.PORT || 5000)
-
-   
      mongoose.connect(URI, {
      
      useNewUrlParser: true, 
