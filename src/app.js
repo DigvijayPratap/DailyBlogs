@@ -186,11 +186,9 @@ app.get('/welcome',(req,res)=>{
   res.render("welcome");
 })
 
-let port = process.env.PORT;
-if(port===null || port==""){
-  port=3000;
-}
+let port = process.env.PORT || 3000;
 
-app.listen(3000, function() {
+
+app.listen(port, function() {
   console.log("Server started");
 });
